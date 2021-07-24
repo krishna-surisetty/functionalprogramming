@@ -1,9 +1,10 @@
-package imperative;
+package imperativeanddeclarative;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImperativeApproachMain {
+
+public class MainOne {
 	
 	public static void main(String[] args) {
 		
@@ -16,6 +17,8 @@ public class ImperativeApproachMain {
 		
 		// Imperative approach
 		
+		System.out.println("Imperative Approach");
+		
 		List<Person> females = new ArrayList<>();
 		
 		for(Person person : persons) {
@@ -27,6 +30,14 @@ public class ImperativeApproachMain {
 		for(Person female : females) {
 			System.out.println(female);
 		}
+	
+	
+		// Declarative approach
+		System.out.println("Declarative Approach");
+		
+		persons.stream()
+			.filter(person -> Gender.FEMALE.equals(person.gender))
+			.forEach(System.out::println);
 			
 	}
 	
